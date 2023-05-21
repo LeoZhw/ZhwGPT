@@ -32,7 +32,9 @@ export default async function (req, res) {
       // prompt: generatePrompt(animal),
       temperature: 0.6,
     });
-    res.status(200).json({ result: completion.data.choices[0].text });
+    console.info(completion.data);
+    console.info(completion.data.choices);
+    res.status(200).json({ result: completion.data.choices });
   } catch(error) {
     // Consider adjusting the error handling logic for your use case
     if (error.response) {
